@@ -1,26 +1,27 @@
 generator client {
-	provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-	provider = "postgresql"
+  provider = "postgresql"
 }
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 model entries {
-	id         String   @id(map: "pk_entries") @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-	user_id    String   @db.Uuid
-	title      String   @db.VarChar(150)
+	id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+	title      String    @db.VarChar(255)
 	content    String
-	mood       Int      @db.SmallInt
-	created_at DateTime @default(now()) @db.Timestamp(6)
-	users      users    @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_entries_user")
+	mood       Int       @db.SmallInt
+	user_id    String    @db.Uuid
+	created_at DateTime? @default(now()) @db.Timestamp(6)
+	users      users     @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fk_entries_user")
 }
 
 model users {
-	id            String    @id(map: "pk_users") @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-	username      String    @unique(map: "uq_users_username") @db.VarChar(50)
-	email         String    @unique(map: "uq_users_email") @db.VarChar(255)
-	password_hash String
-	entries       entries[]
+	id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+	username   String    @unique @db.VarChar(50)
+	email      String    @unique @db.VarChar(255)
+	password   String
+	created_at DateTime? @default(now()) @db.Timestamp(6)
+	entries    entries[]
 }
