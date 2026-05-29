@@ -3,6 +3,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import authRoutes from "./routes/authRoutes.js";
+import entryRoutes from "./routes/entriesRoutes.js"
 
 const PORT = 3000;
 const app = express();
@@ -13,6 +14,7 @@ app.use(cookieParser());
 app.use(passport.initialize());
 
 app.use("/auth", authRoutes);
+app.use("/entry", entryRoutes);
 
 app.listen(PORT, () => {
 	console.log(`Server running on port ${PORT}...`);
