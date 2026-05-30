@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(passport.initialize());
 
 app.use("/auth", authRoutes);
-app.use("/entry", entryRoutes);
+app.use("/entries", entryRoutes);
 
 app.listen(PORT, () => {
 	console.log(`Server running on port ${PORT}...`);

@@ -1,0 +1,33 @@
+.dashboard {
+	width: 100vw;
+	height: 100vh;
+	max-height: 100%;
+	margin: 0 auto;
+	padding: 3rem 5rem 4rem;
+}
+
+.dashboard__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 3rem;
+}
+
+.dashboard__header h1 {
+	font-size: 3rem;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+	line-height: 1.1;
+	color: var(--primary);
+}
+
+.dashboard__header .btn {
+	padding: 0.85rem 1.4rem;
+	font-weight: 600;
+}
+
+.entry-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	gap: 2rem;
+}

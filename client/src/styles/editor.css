@@ -1,0 +1,32 @@
+.editor-page {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 3rem 1.5rem 4rem;
+}
+
+.editor-page__header {
+	margin-bottom: 2rem;
+}
+
+.editor-page__title {
+	font-size: 3rem;
+	font-weight: 800;
+	letter-spacing: -0.04em;
+	color: var(--primary);
+	margin-bottom: 0.5rem;
+}
+
+.editor-page__subtitle {
+	font-size: 1.05rem;
+	color: var(--muted);
+	line-height: 1.7;
+	max-width: 600px;
+}
+
+.editor-page__card {
+	background: var(--surface);
+	border: 1px solid rgba(79, 111, 82, 0.1);
+	border-radius: 24px;
+	padding: 2rem;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}

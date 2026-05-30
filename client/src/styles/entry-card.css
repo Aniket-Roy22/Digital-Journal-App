@@ -1,0 +1,28 @@
+.entry-card {
+	background: white;
+	padding: 1.5rem;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+}
+
+.entry-card__title {
+	margin-bottom: .5rem;
+}
+
+.entry-card__meta {
+	color: var(--muted);
+	font-size: .9rem;
+}
+
+.entry-card__main{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	margin: 1rem 0 0;
+}
+
+.entry-card__actions {
+	display: flex;
+	gap: 0.6rem;
+}
